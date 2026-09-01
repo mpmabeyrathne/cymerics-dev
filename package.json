@@ -2,8 +2,11 @@
   "name": "cymerics-dev",
   "version": "1.0.0",
   "description": "Production-grade Node.js platform for autonomous AI agents, secure execution, distributed systems, and scalable cloud infrastructure.",
-  "main": "src/server.ts",
+  "main": "dist/src/server.js",
   "type": "module",
+  "engines": {
+     "node": ">=20"
+   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node dist/src/server.js",

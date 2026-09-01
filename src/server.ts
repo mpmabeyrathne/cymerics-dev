@@ -2,7 +2,8 @@ import Fastify from 'fastify'
 import { APP_CONFIG } from './config/constants.js';
 import 'dotenv/config';
 
-const PORT = Number(process.env.PORT)  || 3999;
+const PORT = Number(process.env.PORT ?? 3999);
+if (!Number.isFinite(PORT)) throw new Error(`Invalid PORT: ${process.env.PORT}`);
 const server = Fastify({logger: true});
 
 server.get('/', async () => {
@@ -13,7 +14,7 @@ server.get('/', async () => {
 
 const start = async () =>{
     try{
-        server.listen({
+        await server.listen({
             port: PORT,
             host: '0.0.0.0'
         });

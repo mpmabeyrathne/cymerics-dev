@@ -1,0 +1,28 @@
+{
+  "name": "cymerics-dev",
+  "version": "1.0.0",
+  "description": "Production-grade Node.js platform for autonomous AI agents, secure execution, distributed systems, and scalable cloud infrastructure.",
+  "main": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fastify": "^5.12.1",
+    "octokit": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "husky": "^9.1.7",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

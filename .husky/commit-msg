@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(head -n 1 "$COMMIT_MSG_FILE")
+
+if ! echo "$COMMIT_MSG" | grep -Eq '^(feat|fix|chore|refactor|docs|test)\([A-Z0-9]+-[0-9]+\): .+'; then
+  echo "❌ Invalid commit message."
+  echo ""
+  echo "Commit message must follow:"
+  echo "<type>(<TICKET-ID>): <description>"
+  echo ""
+  echo "Example:"
+  echo "feat(CYM-123): initialize backend project"
+  exit 1
+fi

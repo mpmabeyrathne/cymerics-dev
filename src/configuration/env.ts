@@ -7,5 +7,6 @@ export const ENV_CONFIG = {
     GITHUB_REPO : process.env.GITHUB_REPO,
     GITHUB_PROJECT_TOKEN : process.env.GITHUB_PROJECT_TOKEN,
     GITHUB_PROJECT_NUMBER : process.env.GITHUB_PROJECT_NUMBER,
-    NODE_ENV : process.env.NODE_ENV
+    NODE_ENV : process.env.NODE_ENV,
+    HOST : process.env.HOST
 }

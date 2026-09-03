@@ -5,8 +5,8 @@
   "main": "dist/src/server.js",
   "type": "module",
   "engines": {
-     "node": ">=20"
-   },
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node dist/src/server.js",
@@ -18,7 +18,8 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "fastify": "^5.12.1",
-    "octokit": "^5.0.5"
+    "octokit": "^5.0.5",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^26.4.0",

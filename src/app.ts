@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { APP_CONFIG } from "./configuration/constants.js";
+import { APP_CONFIG } from "./configuration/index.js";
 
 export function buildApp(){
     const app = Fastify({

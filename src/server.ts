@@ -1,21 +1,12 @@
-import Fastify from 'fastify'
-import { APP_CONFIG } from './config/constants.js';
-import 'dotenv/config';
+import { ENV_CONFIG } from './config/env.js';
+import { buildApp } from './app.js';
 
-const PORT = Number(process.env.PORT ?? 3999);
-if (!Number.isFinite(PORT)) throw new Error(`Invalid PORT: ${process.env.PORT}`);
-const server = Fastify({logger: true});
-
-server.get('/', async () => {
-    return {
-        message : `${APP_CONFIG.name} backend is running`
-    }
-});
+const server = buildApp();
 
 const start = async () =>{
     try{
         await server.listen({
-            port: PORT,
+            port: ENV_CONFIG.PORT,
             host: '0.0.0.0'
         });
     }catch(error){

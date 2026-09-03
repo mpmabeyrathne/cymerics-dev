@@ -7,7 +7,7 @@ const start = async () =>{
     try{
         await server.listen({
             port: ENV_CONFIG.PORT,
-            host: '0.0.0.0'
+            host: ENV_CONFIG.HOST
         });
     }catch(error){
         server.log.error(error);

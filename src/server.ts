@@ -1,4 +1,4 @@
-import { ENV_CONFIG } from './config/env.js';
+import { ENV_CONFIG } from './configuration/env.js';
 import { buildApp } from './app.js';
 
 const server = buildApp();

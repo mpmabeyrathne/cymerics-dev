@@ -12,6 +12,7 @@ export function registerErrorHandler(app: FastifyInstance){
                 error:{
                     code: error.code,
                     message: error.message,
+                    requestId: request.id,
                 },
             });
         }
@@ -21,6 +22,7 @@ export function registerErrorHandler(app: FastifyInstance){
                 error: {
                     code: 'VALIDATION_ERROR',
                     message: 'Request validation failed',
+                    requestId: request.id,
                 },
             });
         }
@@ -30,6 +32,7 @@ export function registerErrorHandler(app: FastifyInstance){
                 error: {
                     code: 'HTTP_ERROR',
                     message: 'Request could not be processed',
+                    requestId: request.id,
                 },
             });
         }
@@ -38,6 +41,7 @@ export function registerErrorHandler(app: FastifyInstance){
             error: {
                 code: 'INTERNAL_SERVER_ERROR',
                 message: 'An unexpected error occurred',
+                requestId: request.id,
             },
         })
     })

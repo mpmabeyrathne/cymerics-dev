@@ -12,24 +12,50 @@ const start = async () => {
             host: ENV_CONFIG.HOST,
         });
     } catch (error) {
-        server.log.error(error, 'Application startup failed');
+        server.log.error(
+            error,
+            'Application startup failed',
+        );
+
         process.exit(1);
     }
 };
 
+let isShuttingDown = false;
+
 const shutdown = async (signal: string) => {
+    if (isShuttingDown) {
+        return;
+    }
+
+    isShuttingDown = true;
+
     server.log.info(
         { signal },
         'Application shutdown initiated',
     );
 
+    const shutdownTimeout = setTimeout(() => {
+        server.log.error(
+            'Shutdown timeout exceeded',
+        );
+
+        process.exit(1);
+    }, 10_000);
+
     try {
         await server.close();
 
-        server.log.info('Application shutdown completed');
+        clearTimeout(shutdownTimeout);
+
+        server.log.info(
+            'Application shutdown completed',
+        );
 
         process.exit(0);
     } catch (error) {
+        clearTimeout(shutdownTimeout);
+
         server.log.error(
             { error },
             'Application shutdown failed',

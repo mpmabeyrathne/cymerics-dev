@@ -1,6 +1,6 @@
-import { AppError } from "./index.js";
+import { AppError } from "./app-error.js";
 
-export class internalError extends AppError{
+export class InternalError extends AppError{
    constructor(
     message: string
    ){
@@ -10,6 +10,6 @@ export class internalError extends AppError{
         message
     )
 
-    this.name = 'internalError';
+    this.name = 'InternalError';
    }
 }

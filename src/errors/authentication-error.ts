@@ -1,6 +1,6 @@
-import { AppError } from "./index.js";
+import { AppError } from "./app-error.js";
 
-export class authenticationError extends AppError{
+export class AuthenticationError extends AppError{
    constructor(
     message: string
    ){
@@ -10,6 +10,6 @@ export class authenticationError extends AppError{
         message
     )
 
-    this.name = 'authenticationError';
+    this.name = 'AuthenticationError';
    }
 }

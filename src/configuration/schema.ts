@@ -25,4 +25,6 @@ export const envSchema = z.object({
         .number()
         .int()
         .positive(),
+
+    LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']),
 });

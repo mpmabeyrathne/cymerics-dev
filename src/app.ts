@@ -1,10 +1,12 @@
 import Fastify from "fastify";
-import { APP_CONFIG } from "./configuration/index.js";
+import { APP_CONFIG, ENV_CONFIG } from "./configuration/index.js";
 import { registerErrorHandler, AppError } from "./errors/index.js";
 
 export function buildApp(){
     const app = Fastify({
-        logger : true
+        logger : {
+            level: ENV_CONFIG.LOG_LEVEL,
+        },
     });
 
      // Register plugins

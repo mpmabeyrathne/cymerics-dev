@@ -5,7 +5,7 @@ export class InternalError extends AppError{
     message: string
    ){
     super(
-        'INTERNAL_ERROR',
+        'INTERNAL_SERVER_ERROR',
         500,
         message
     )

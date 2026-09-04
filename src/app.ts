@@ -7,6 +7,11 @@ export function buildApp(){
         logger : {
             level: ENV_CONFIG.LOG_LEVEL,
         },
+        requestIdHeader: 'x-request-id',
+    });
+
+    app.addHook('onSend', async (request, reply) => {
+        reply.header('X-Request-ID', request.id);
     });
 
      // Register plugins
@@ -27,9 +32,12 @@ export function buildApp(){
         );
     });
 
-    app.get('/test-unknown-error', async () => {
-        throw new Error('Something unexpected happened');
+    app.get('/test-request-error', async () => {
+        throw new AppError(
+            'TEST_ERROR',
+            400,
+            'Request ID test error',
+        );
     });
-
     return app;
 }

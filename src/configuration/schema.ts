@@ -27,4 +27,5 @@ export const envSchema = z.object({
         .positive(),
 
     LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']),
+    CORS_ORIGIN : z.string().min(1),
 });

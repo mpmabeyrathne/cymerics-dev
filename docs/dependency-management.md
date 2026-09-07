@@ -14,11 +14,11 @@ Packages required by the application at runtime must be listed under `dependenci
 
 Examples include:
 
-* Fastify
-* Fastify plugins
-* Zod
-* dotenv
-* Octokit
+- Fastify
+- Fastify plugins
+- Zod
+- dotenv
+- Octokit
 
 ### Development Dependencies
 
@@ -26,10 +26,10 @@ Packages required only for development, type checking, building, testing, or rep
 
 Examples include:
 
-* TypeScript
-* tsx
-* @types/node
-* Husky
+- TypeScript
+- tsx
+- @types/node
+- Husky
 
 A dependency must be moved to `dependencies` if the production application requires it at runtime.
 
@@ -99,20 +99,20 @@ Dependencies should be periodically reviewed to identify packages that are no lo
 
 Unused dependencies should be removed to:
 
-* Reduce project complexity
-* Reduce maintenance overhead
-* Reduce the application attack surface
-* Keep the dependency tree minimal
+- Reduce project complexity
+- Reduce maintenance overhead
+- Reduce the application attack surface
+- Keep the dependency tree minimal
 
 Dependency analysis tools may be introduced as the project grows.
 
 ## General Rules
 
-* Prefer well-maintained and actively supported packages.
-* Avoid adding dependencies when the functionality can be implemented simply without them.
-* Keep production and development dependencies separated.
-* Commit `package-lock.json`.
-* Review major version upgrades carefully.
-* Run security audits regularly.
-* Remove unused dependencies.
-* Verify dependency changes before merging.
+- Prefer well-maintained and actively supported packages.
+- Avoid adding dependencies when the functionality can be implemented simply without them.
+- Keep production and development dependencies separated.
+- Commit `package-lock.json`.
+- Review major version upgrades carefully.
+- Run security audits regularly.
+- Remove unused dependencies.
+- Verify dependency changes before merging.

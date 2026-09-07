@@ -1,15 +1,14 @@
-import type { FastifyError, FastifyInstance } from "fastify";
-import { AppError } from "./app-error.js";
-import { request } from "http";
-import { ZodError } from "zod";
+import type { FastifyError, FastifyInstance } from 'fastify';
+import { AppError } from './app-error.js';
+import { ZodError } from 'zod';
 
-export function registerErrorHandler(app: FastifyInstance){
-    app.setErrorHandler((error: FastifyError, request, reply) =>{
+export function registerErrorHandler(app: FastifyInstance) {
+    app.setErrorHandler((error: FastifyError, request, reply) => {
         request.log.error(error);
 
-        if (error instanceof AppError){
+        if (error instanceof AppError) {
             return reply.status(error.statusCode).send({
-                error:{
+                error: {
                     code: error.code,
                     message: error.message,
                     requestId: request.id,
@@ -17,7 +16,7 @@ export function registerErrorHandler(app: FastifyInstance){
             });
         }
 
-        if(error instanceof ZodError){
+        if (error instanceof ZodError) {
             return reply.status(400).send({
                 error: {
                     code: 'VALIDATION_ERROR',
@@ -43,6 +42,6 @@ export function registerErrorHandler(app: FastifyInstance){
                 message: 'An unexpected error occurred',
                 requestId: request.id,
             },
-        })
-    })
+        });
+    });
 }

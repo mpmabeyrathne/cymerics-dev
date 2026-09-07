@@ -1,34 +1,45 @@
 {
-  "name": "cymerics-dev",
-  "version": "1.0.0",
-  "description": "Production-grade Node.js platform for autonomous AI agents, secure execution, distributed systems, and scalable cloud infrastructure.",
-  "main": "dist/src/server.js",
-  "type": "module",
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start": "node dist/src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "typecheck": "tsc --noEmit",
-    "build": "tsc",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "@fastify/cors": "^11.3.0",
-    "@fastify/helmet": "^13.1.1",
-    "dotenv": "^17.4.2",
-    "fastify": "^5.12.1",
-    "octokit": "^5.0.5",
-    "zod": "^4.5.4"
-  },
-  "devDependencies": {
-    "@types/node": "^26.4.0",
-    "husky": "^9.1.7",
-    "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "cymerics-dev",
+    "version": "1.0.0",
+    "description": "Production-grade Node.js platform for autonomous AI agents, secure execution, distributed systems, and scalable cloud infrastructure.",
+    "main": "dist/src/server.js",
+    "type": "module",
+    "engines": {
+        "node": ">=20"
+    },
+    "scripts": {
+        "dev": "tsx watch src/server.ts",
+        "start": "node dist/src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "build": "tsc",
+        "prepare": "husky",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "check": "npm run format:check && npm run lint && npm run typecheck"
+    },
+    "dependencies": {
+        "@fastify/cors": "^11.3.0",
+        "@fastify/helmet": "^13.1.1",
+        "dotenv": "^17.4.2",
+        "fastify": "^5.12.1",
+        "octokit": "^5.0.5",
+        "zod": "^4.5.4"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.5",
+        "@types/node": "^26.4.0",
+        "eslint": "^9.39.5",
+        "eslint-import-resolver-typescript": "^4.4.5",
+        "eslint-plugin-import": "^2.32.0",
+        "husky": "^9.1.7",
+        "prettier": "^3.9.6",
+        "tsx": "^4.23.13",
+        "typescript": "5.9",
+        "typescript-eslint": "^8.69.0"
+    },
+    "author": "",
+    "license": "ISC"
 }

@@ -1,17 +1,9 @@
 import { z } from 'zod';
 
 export const envSchema = z.object({
-    NODE_ENV: z.enum([
-        'development',
-        'test',
-        'production'
-    ]),
+    NODE_ENV: z.enum(['development', 'test', 'production']),
 
-    PORT: z.coerce
-        .number()
-        .int()
-        .min(1)
-        .max(65535),
+    PORT: z.coerce.number().int().min(1).max(65535),
 
     HOST: z.string().min(1),
 
@@ -21,11 +13,8 @@ export const envSchema = z.object({
 
     GITHUB_PROJECT_TOKEN: z.string().min(1),
 
-    GITHUB_PROJECT_NUMBER: z.coerce
-        .number()
-        .int()
-        .positive(),
+    GITHUB_PROJECT_NUMBER: z.coerce.number().int().positive(),
 
     LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']),
-    CORS_ORIGIN : z.string().min(1),
+    CORS_ORIGIN: z.string().min(1),
 });

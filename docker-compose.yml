@@ -1,0 +1,22 @@
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile
+
+        container_name: cymerics-api
+
+        ports:
+            - '3000:3000'
+
+        environment:
+            NODE_ENV: development
+            PORT: 3000
+            HOST: 0.0.0.0
+            GITHUB_TOKEN: test-token
+            GITHUB_OWNER: test-owner
+            GITHUB_REPO: test-repo
+            GITHUB_PROJECT_TOKEN: test-project-token
+            GITHUB_PROJECT_NUMBER: 1
+            LOG_LEVEL: info
+            CORS_ORIGIN: http://localhost:3000

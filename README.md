@@ -96,13 +96,13 @@ Who originally authorized the action?
 
 ### Key Questions
 
-* Does Agent C have the same authority as the original requester?
-* Can an agent gain more permissions through delegation?
-* Are the original permission constraints preserved?
-* Can an agent delegate an action it was not allowed to delegate?
-* How can the origin of the final action be identified?
-* What happens when authorization is revoked?
-* How should authorization be maintained across dynamic delegation chains?
+- Does Agent C have the same authority as the original requester?
+- Can an agent gain more permissions through delegation?
+- Are the original permission constraints preserved?
+- Can an agent delegate an action it was not allowed to delegate?
+- How can the origin of the final action be identified?
+- What happens when authorization is revoked?
+- How should authorization be maintained across dynamic delegation chains?
 
 ---
 
@@ -185,4 +185,3 @@ Does the final action remain within that authority?
 ```
 
 This is the problem Cymerics is investigating.
-

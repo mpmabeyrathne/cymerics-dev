@@ -6,8 +6,9 @@ All backend errors use a consistent response structure.
 
 ```json
 {
-  "error": {
-    "code": "ERROR_CODE",
-    "message": "Human-readable error message"
-  }
+    "error": {
+        "code": "ERROR_CODE",
+        "message": "Human-readable error message"
+    }
 }
+```

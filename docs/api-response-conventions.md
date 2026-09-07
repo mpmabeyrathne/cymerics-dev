@@ -8,8 +8,8 @@ The purpose of these conventions is to ensure that all API consumers receive pre
 
 API responses are divided into two main categories:
 
-* Success responses
-* Error responses
+- Success responses
+- Error responses
 
 A response must contain either `data` or `error`, but not both.
 
@@ -45,10 +45,10 @@ For an endpoint returning a single resource:
 
 ```json
 {
-  "data": {
-    "id": 123,
-    "name": "Pasindu"
-  }
+    "data": {
+        "id": 123,
+        "name": "Pasindu"
+    }
 }
 ```
 
@@ -62,16 +62,16 @@ For an endpoint returning multiple resources:
 
 ```json
 {
-  "data": [
-    {
-      "id": 1,
-      "name": "Pasindu"
-    },
-    {
-      "id": 2,
-      "name": "Kamal"
-    }
-  ]
+    "data": [
+        {
+            "id": 1,
+            "name": "Pasindu"
+        },
+        {
+            "id": 2,
+            "name": "Kamal"
+        }
+    ]
 }
 ```
 
@@ -99,10 +99,10 @@ Example:
 
 ```json
 {
-  "data": [],
-  "meta": {
-    "timestamp": "2026-09-04T10:00:00Z"
-  }
+    "data": [],
+    "meta": {
+        "timestamp": "2026-09-04T10:00:00Z"
+    }
 }
 ```
 
@@ -110,10 +110,10 @@ The `meta` property must not contain the primary resource data.
 
 It is intended for information such as:
 
-* Pagination information
-* Response metadata
-* Processing information
-* Other non-resource information required by API consumers
+- Pagination information
+- Response metadata
+- Processing information
+- Other non-resource information required by API consumers
 
 The `meta` property is optional and should only be included when additional metadata is required.
 
@@ -127,11 +127,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Resource not found",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "NOT_FOUND",
+        "message": "Resource not found",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -149,7 +149,7 @@ Example:
 
 ```json
 {
-  "code": "VALIDATION_ERROR"
+    "code": "VALIDATION_ERROR"
 }
 ```
 
@@ -176,7 +176,7 @@ Example:
 
 ```json
 {
-  "message": "Resource not found"
+    "message": "Resource not found"
 }
 ```
 
@@ -194,7 +194,7 @@ Example:
 
 ```json
 {
-  "requestId": "req-123"
+    "requestId": "req-123"
 }
 ```
 
@@ -214,20 +214,20 @@ HTTP/1.1 400 Bad Request
 
 ```json
 {
-  "error": {
-    "code": "VALIDATION_ERROR",
-    "message": "Request validation failed",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Request validation failed",
+        "requestId": "req-123"
+    }
 }
 ```
 
 Validation errors may occur when:
 
-* Request body is invalid
-* Query parameters are invalid
-* Path parameters are invalid
-* Required headers are missing or invalid
+- Request body is invalid
+- Query parameters are invalid
+- Path parameters are invalid
+- Required headers are missing or invalid
 
 Validation should happen before business logic is executed.
 
@@ -241,11 +241,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "AUTHENTICATION_ERROR",
-    "message": "Authentication required",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "AUTHENTICATION_ERROR",
+        "message": "Authentication required",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -259,11 +259,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "AUTHORIZATION_ERROR",
-    "message": "You do not have permission to perform this action",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "AUTHORIZATION_ERROR",
+        "message": "You do not have permission to perform this action",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -277,11 +277,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Resource not found",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "NOT_FOUND",
+        "message": "Resource not found",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -295,11 +295,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "CONFLICT",
-    "message": "Resource already exists",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "CONFLICT",
+        "message": "Resource already exists",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -313,11 +313,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "INTERNAL_SERVER_ERROR",
-    "message": "An unexpected error occurred",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "INTERNAL_SERVER_ERROR",
+        "message": "An unexpected error occurred",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -325,15 +325,15 @@ Internal error details must not be exposed to API consumers.
 
 The following information must never be returned in production error responses:
 
-* Stack traces
-* Database queries
-* Database credentials
-* API keys
-* Access tokens
-* Passwords
-* File system paths
-* Internal service URLs
-* Internal implementation details
+- Stack traces
+- Database queries
+- Database credentials
+- API keys
+- Access tokens
+- Passwords
+- File system paths
+- Internal service URLs
+- Internal implementation details
 
 Detailed information should only be available through server-side logs.
 
@@ -393,24 +393,24 @@ Example:
 
 ```json
 {
-  "data": [
-    {
-      "id": 1,
-      "name": "Pasindu"
-    },
-    {
-      "id": 2,
-      "name": "Kamal"
+    "data": [
+        {
+            "id": 1,
+            "name": "Pasindu"
+        },
+        {
+            "id": 2,
+            "name": "Kamal"
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "limit": 20,
+            "total": 100,
+            "totalPages": 5
+        }
     }
-  ],
-  "meta": {
-    "pagination": {
-      "page": 1,
-      "limit": 20,
-      "total": 100,
-      "totalPages": 5
-    }
-  }
 }
 ```
 
@@ -435,11 +435,11 @@ Every API request must have a request ID.
 
 The request ID is used to correlate:
 
-* Client requests
-* API responses
-* Application logs
-* Errors
-* Downstream operations
+- Client requests
+- API responses
+- Application logs
+- Errors
+- Downstream operations
 
 The request ID should be available through the `X-Request-ID` HTTP header.
 
@@ -459,11 +459,11 @@ For error responses, the request ID should also be included in the response body
 
 ```json
 {
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Resource not found",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "NOT_FOUND",
+        "message": "Resource not found",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -516,7 +516,7 @@ Example:
 
 ```json
 {
-  "status": "ok"
+    "status": "ok"
 }
 ```
 
@@ -530,7 +530,7 @@ Example:
 
 ```json
 {
-  "status": "ready"
+    "status": "ready"
 }
 ```
 
@@ -573,10 +573,10 @@ GET /users/123
 
 ```json
 {
-  "data": {
-    "id": 123,
-    "name": "Pasindu"
-  }
+    "data": {
+        "id": 123,
+        "name": "Pasindu"
+    }
 }
 ```
 
@@ -594,10 +594,10 @@ POST /users
 
 ```json
 {
-  "data": {
-    "id": 123,
-    "name": "Pasindu"
-  }
+    "data": {
+        "id": 123,
+        "name": "Pasindu"
+    }
 }
 ```
 
@@ -625,11 +625,11 @@ No response body is returned.
 
 ```json
 {
-  "error": {
-    "code": "VALIDATION_ERROR",
-    "message": "Request validation failed",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Request validation failed",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -643,11 +643,11 @@ No response body is returned.
 
 ```json
 {
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Resource not found",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "NOT_FOUND",
+        "message": "Resource not found",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -661,11 +661,11 @@ No response body is returned.
 
 ```json
 {
-  "error": {
-    "code": "INTERNAL_SERVER_ERROR",
-    "message": "An unexpected error occurred",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "INTERNAL_SERVER_ERROR",
+        "message": "An unexpected error occurred",
+        "requestId": "req-123"
+    }
 }
 ```
 

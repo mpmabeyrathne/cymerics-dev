@@ -1,15 +1,14 @@
-import Fastify from "fastify";
+import Fastify from 'fastify';
 import helmet from '@fastify/helmet';
 import cors from '@fastify/cors';
-import { ENV_CONFIG } from "./configuration/index.js";
-import { registerErrorHandler } from "./errors/index.js";
-import { healthRoutes } from "./routes/health.routes.js";
-import { readinessRoutes } from "./routes/readiness.routes.js";
+import { ENV_CONFIG } from './configuration/index.js';
+import { registerErrorHandler } from './errors/index.js';
+import { healthRoutes } from './routes/health.routes.js';
+import { readinessRoutes } from './routes/readiness.routes.js';
 
-
-export function buildApp(){
+export function buildApp() {
     const app = Fastify({
-        logger : {
+        logger: {
             level: ENV_CONFIG.LOG_LEVEL,
         },
         requestIdHeader: 'x-request-id',
@@ -20,10 +19,10 @@ export function buildApp(){
         reply.header('X-Request-ID', request.id);
     });
 
-     // Register plugins
-     app.register(helmet);
+    // Register plugins
+    app.register(helmet);
 
-     app.register(cors, {
+    app.register(cors, {
         origin: ENV_CONFIG.CORS_ORIGIN,
     });
 
@@ -33,6 +32,6 @@ export function buildApp(){
     // Register routes
     app.register(healthRoutes);
     app.register(readinessRoutes);
-    
+
     return app;
 }

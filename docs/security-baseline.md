@@ -6,12 +6,12 @@ Cymerics implements a basic HTTP security baseline to provide secure defaults fo
 
 This baseline focuses on:
 
-* Security-related HTTP headers
-* Request size limits
-* CORS configuration
-* Content type handling
-* Information leakage prevention
-* Secure application defaults
+- Security-related HTTP headers
+- Request size limits
+- CORS configuration
+- Content type handling
+- Information leakage prevention
+- Secure application defaults
 
 ## Security Headers
 
@@ -73,13 +73,13 @@ Internal application details must not be exposed to clients.
 
 The application must not return:
 
-* Stack traces
-* Database errors
-* Internal file paths
-* Credentials
-* API keys
-* Tokens
-* Other internal implementation details
+- Stack traces
+- Database errors
+- Internal file paths
+- Credentials
+- API keys
+- Tokens
+- Other internal implementation details
 
 Unexpected application errors return a safe generic response while detailed error information is logged server-side.
 
@@ -87,11 +87,11 @@ Example:
 
 ```json
 {
-  "error": {
-    "code": "INTERNAL_SERVER_ERROR",
-    "message": "An unexpected error occurred",
-    "requestId": "req-123"
-  }
+    "error": {
+        "code": "INTERNAL_SERVER_ERROR",
+        "message": "An unexpected error occurred",
+        "requestId": "req-123"
+    }
 }
 ```
 
@@ -99,11 +99,11 @@ Example:
 
 The application follows secure-by-default principles:
 
-* Request bodies have a defined size limit.
-* Security headers are enabled through Helmet.
-* CORS origins are explicitly configured.
-* Internal error details are not exposed to clients.
-* Sensitive credentials and tokens must not be logged or returned in responses.
+- Request bodies have a defined size limit.
+- Security headers are enabled through Helmet.
+- CORS origins are explicitly configured.
+- Internal error details are not exposed to clients.
+- Sensitive credentials and tokens must not be logged or returned in responses.
 
 ## Scope
 

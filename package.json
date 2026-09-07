@@ -17,7 +17,7 @@
         "prepare": "husky",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
-        "check": "npm run format:check && npm run lint && npm run typecheck",
+        "check": "npm run format:check && npm run lint && npm run typecheck && npm run test",
         "test": "vitest run",
         "test:watch": "vitest"
     },

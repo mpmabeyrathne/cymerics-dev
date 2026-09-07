@@ -10,7 +10,6 @@
     "scripts": {
         "dev": "tsx watch src/server.ts",
         "start": "node dist/src/server.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "typecheck": "tsc --noEmit",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
@@ -18,7 +17,9 @@
         "prepare": "husky",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
-        "check": "npm run format:check && npm run lint && npm run typecheck"
+        "check": "npm run format:check && npm run lint && npm run typecheck && npm run test",
+        "test": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@fastify/cors": "^11.3.0",
@@ -38,7 +39,8 @@
         "prettier": "^3.9.6",
         "tsx": "^4.23.13",
         "typescript": "5.9",
-        "typescript-eslint": "^8.69.0"
+        "typescript-eslint": "^8.69.0",
+        "vitest": "^5.0.0"
     },
     "author": "",
     "license": "ISC"

@@ -12,8 +12,8 @@ The current Docker setup runs the Node.js API inside a container and provides a 
 
 The following tools are required:
 
-* Docker
-* Docker Compose
+- Docker
+- Docker Compose
 
 Verify the installation:
 
@@ -75,13 +75,13 @@ The `.dockerignore` file prevents unnecessary files from being copied into the D
 
 The following are excluded:
 
-* `node_modules`
-* `dist`
-* `coverage`
-* Environment files
-* Git metadata
-* GitHub workflow files
-* npm debug logs
+- `node_modules`
+- `dist`
+- `coverage`
+- Environment files
+- Git metadata
+- GitHub workflow files
+- npm debug logs
 
 This keeps the Docker build context smaller and prevents local secrets and unnecessary files from being included in the image.
 
@@ -154,7 +154,7 @@ Expected response:
 
 ```json
 {
-  "status": "ok"
+    "status": "ok"
 }
 ```
 
@@ -228,8 +228,8 @@ Real credentials and secrets must not be committed to the repository.
 
 Sensitive values include:
 
-* `GITHUB_TOKEN`
-* `GITHUB_PROJECT_TOKEN`
+- `GITHUB_TOKEN`
+- `GITHUB_PROJECT_TOKEN`
 
 Use appropriate environment-specific configuration or secret management when working with real credentials.
 
@@ -338,14 +338,14 @@ Production-specific Docker optimization will be addressed separately.
 
 Future production improvements may include:
 
-* Multi-stage Docker builds
-* Production-only dependencies
-* Smaller runtime images
-* Non-root container execution
-* Container health checks
-* Resource limits
-* Production environment configuration
-* Container security hardening
+- Multi-stage Docker builds
+- Production-only dependencies
+- Smaller runtime images
+- Non-root container execution
+- Container health checks
+- Resource limits
+- Production environment configuration
+- Container security hardening
 
 These concerns are intentionally outside the current development Docker setup.
 
@@ -353,11 +353,11 @@ These concerns are intentionally outside the current development Docker setup.
 
 The Docker development environment provides:
 
-* Reproducible application builds
-* Consistent Node.js runtime
-* Containerized application execution
-* Docker Compose service management
-* Development environment configuration
-* A foundation for PostgreSQL and Redis integration
+- Reproducible application builds
+- Consistent Node.js runtime
+- Containerized application execution
+- Docker Compose service management
+- Development environment configuration
+- A foundation for PostgreSQL and Redis integration
 
 Docker is currently used as the local development environment for the Cymerics backend.

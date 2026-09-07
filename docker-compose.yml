@@ -20,3 +20,11 @@ services:
             GITHUB_PROJECT_NUMBER: 1
             LOG_LEVEL: info
             CORS_ORIGIN: http://localhost:3000
+
+        networks: 
+            - cymerics-network
+
+
+networks:
+    cymerics-network:
+        driver: bridge

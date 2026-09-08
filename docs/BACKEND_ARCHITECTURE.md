@@ -129,12 +129,12 @@ Application-specific errors extend the base `AppError` class.
 
 Examples include:
 
-* `ValidationError`
-* `AuthenticationError`
-* `AuthorizationError`
-* `ConflictError`
-* `NotFoundError`
-* `InternalError`
+- `ValidationError`
+- `AuthenticationError`
+- `AuthorizationError`
+- `ConflictError`
+- `NotFoundError`
+- `InternalError`
 
 Errors are handled by the global error handler and converted into appropriate HTTP responses.
 
@@ -166,11 +166,11 @@ Fastify's built-in logger is used for application logging.
 
 Logging should provide useful information for:
 
-* Application startup
-* Server shutdown
-* HTTP requests
-* Errors
-* Important application events
+- Application startup
+- Server shutdown
+- HTTP requests
+- Errors
+- Important application events
 
 Logs should not contain sensitive information such as passwords, tokens, or secrets.
 
@@ -231,14 +231,14 @@ Not every feature requires every layer. Simple features may omit unnecessary lay
 
 Current architectural decisions include:
 
-* Node.js is used as the backend runtime.
-* TypeScript is used with strict type checking.
-* Fastify is used as the HTTP framework.
-* ESM is used for JavaScript modules.
-* Zod is used for validation.
-* Vitest is used for testing.
-* Configuration is validated during application startup.
-* Application errors are handled centrally.
-* The application and server startup are separated between `app.ts` and `server.ts`.
+- Node.js is used as the backend runtime.
+- TypeScript is used with strict type checking.
+- Fastify is used as the HTTP framework.
+- ESM is used for JavaScript modules.
+- Zod is used for validation.
+- Vitest is used for testing.
+- Configuration is validated during application startup.
+- Application errors are handled centrally.
+- The application and server startup are separated between `app.ts` and `server.ts`.
 
 Architectural decisions should be updated when major changes are introduced.

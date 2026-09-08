@@ -6,10 +6,10 @@ This document explains how to set up and run Cymerics locally for development.
 
 Before starting, install:
 
-* Node.js 20 or later
-* npm
-* Git
-* Docker (optional, for containerized development)
+- Node.js 20 or later
+- npm
+- Git
+- Docker (optional, for containerized development)
 
 Check the installed versions:
 

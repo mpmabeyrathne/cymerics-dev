@@ -5,6 +5,7 @@ import { ENV_CONFIG } from './configuration/index.js';
 import { registerErrorHandler } from './errors/index.js';
 import { healthRoutes } from './routes/health.routes.js';
 import { readinessRoutes } from './routes/readiness.routes.js';
+import { registerV1Routes } from './routes/v1/index.js';
 
 export function buildApp() {
     const app = Fastify({
@@ -32,6 +33,9 @@ export function buildApp() {
     // Register routes
     app.register(healthRoutes);
     app.register(readinessRoutes);
+    app.register(registerV1Routes, {
+        prefix: '/api/v1',
+    });
 
     return app;
 }
